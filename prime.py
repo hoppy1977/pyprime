@@ -1,17 +1,16 @@
 import math
 
-maxNumber = 10
+maxNumber = 100
 
 def is_prime(candidate: int) -> bool:
     if candidate < 2:
         return False
 
-    for divisor in range(2, candidate):
-        if(divisor <= math.sqrt(candidate)):
-            if candidate % divisor == 0:
-                return False
-        else:
-            return True
+    divisor = 2
+    while divisor <= math.sqrt(candidate):
+        if candidate % divisor == 0:
+            return False
+        divisor += 1
 
     return True
 
